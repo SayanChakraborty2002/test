@@ -1,0 +1,516 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+p {
+  font-family: "Jost", sans-serif;
+  line-height: 2;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+h1 {
+  line-height: 1;
+}
+
+.container {
+  max-width: 1140px;
+  margin-inline: auto;
+}
+
+.navbar {
+  padding: 25px 0 25px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar i {
+  font-size: 2rem;
+}
+.menu-btn {
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+#hero {
+  background:
+    linear-gradient(to bottom, white 0 75%, transparent 75% 100%),
+    linear-gradient(to right, white 0 50%, #d0e4f4 50% 100%);
+}
+
+.hero-section {
+  position: relative;
+  padding: 70px;
+  padding-left: 10px;
+  background:
+    linear-gradient(to bottom, white 0 75%, transparent 75% 100%),
+    linear-gradient(to right, white 0 24%, #d0e4f4 24% 100%);
+}
+
+.hero-sky-box,
+.dots {
+  height: 350px;
+  width: 400px;
+  position: absolute;
+  z-index: 2;
+}
+
+.hero-sky-box {
+  background-color: #d0e4f4;
+  top: 0;
+  right: 0;
+}
+.dots {
+  background: radial-gradient(circle, #696969 2px, transparent 1px);
+  background-size: 10px 10px;
+  bottom: 0;
+  left: 70%;
+  transform: translateX(-90%);
+}
+
+.card {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3;
+}
+
+.card h1 {
+  font-size: 5rem;
+  font-weight: 500;
+}
+.card p {
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 1.3rem;
+  max-width: 70%;
+}
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 70px;
+  padding-inline: 30px;
+}
+.card-img {
+  flex: 1;
+}
+.card-img img {
+  object-fit: cover;
+  display: block;
+}
+.hero-card-btn {
+  padding: 15px 50px;
+  border: 1px solid #111;
+  width: fit-content;
+  color: #111;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  background-color: transparent;
+}
+#about {
+  background: linear-gradient(to right, white 0 50%, #d0e4f4 50% 100%);
+}
+
+.about-section {
+  position: relative;
+  background: linear-gradient(to right, white 0 24%, #d0e4f4 24% 100%);
+  height: 100%;
+  padding-top: 150px;
+  padding-bottom: 300px;
+  padding-inline: 0;
+}
+
+.about-section img {
+  width: 57%;
+  position: relative;
+  z-index: 1;
+}
+
+.box-wrapper {
+  width: 52%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  position: absolute;
+  right: 0;
+  top: 260px;
+  z-index: 2;
+}
+.box {
+  padding: 40px 30px;
+  background-color: white;
+}
+
+.box h2 {
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.box p {
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.about-dot {
+  height: 250px;
+  width: 50vw;
+  background: radial-gradient(circle, #696969 2px, transparent 1px);
+  background-size: 10px 10px;
+  position: absolute;
+  right: 62%;
+  bottom: 200px;
+}
+
+#client {
+  background:
+    linear-gradient(to bottom, #d0e4f4 0% 80%, transparent 80% 100%),
+    linear-gradient(to right, white 0% 50%, #d0e4f4 50% 100%);
+}
+
+.client-section {
+  background:
+    linear-gradient(to bottom, #d0e4f4 0% 80%, transparent 80% 100%),
+    linear-gradient(to right, white 0% 90%, #d0e4f4 90% 100%);
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+.client-section h2 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.client-img {
+  overflow: hidden;
+}
+
+.client-section img {
+  width: 60%;
+  height: auto;
+  position: relative;
+  left: 42%;
+  display: block;
+  object-fit: cover;
+}
+
+.client-info {
+  width: 63%;
+  position: absolute;
+  z-index: 2;
+  line-height: 1.2;
+  padding-top: 80px;
+}
+
+.client-dot {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  z-index: 2;
+  background: radial-gradient(circle, #696969 2.5px, transparent 1px);
+  background-size: 10px 10px;
+  bottom: 0;
+  left: 44%;
+  transform: translateX(-44%);
+}
+
+#achievements {
+  background: linear-gradient(to right, white 0% 50%, #d0e4f4 50% 100%);
+}
+
+.achievement-section {
+  background: linear-gradient(to right, white 0% 90%, #d0e4f4 90% 100%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-block: 100px;
+}
+
+.achievements-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+.achievement {
+  flex: 0 0 40%;
+  display: flex;
+}
+.card-icon {
+  background-color: #aad2f7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 80px;
+  width: fit-content;
+}
+
+.card-icon::before {
+  content: "";
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+.light::before {
+  background: url("../IT-solution/Design-1/assets/svg-image-4.svg") center/cover
+    no-repeat;
+}
+
+.flag::before {
+  background: url("../IT-solution/Design-1/assets/svg-image-6.svg") center/cover
+    no-repeat;
+}
+
+.msg::before {
+  background: url("../IT-solution/Design-1/assets/svg-image-8.svg") center/cover
+    no-repeat;
+}
+
+.diamond::before {
+  background: url("../IT-solution/Design-1/assets/svg-image-10.svg")
+    center/cover no-repeat;
+}
+
+.achievement-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-inline: 30px;
+}
+
+.achievement-text h3 {
+  font-size: 1.6rem;
+}
+
+#branding {
+  padding-top: 50px;
+}
+.branding-section {
+  background: linear-gradient(
+    to right,
+    white 0% 8%,
+    #d0e4f4 8% 85%,
+    white 85% 100%
+  );
+  display: flex;
+  padding-block: 180px;
+  position: relative;
+}
+.brand-card-btn {
+  padding: 10px 30px;
+  border: 1px solid #111;
+  width: fit-content;
+  color: #111;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  background-color: transparent;
+}
+
+.branding-img-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.branding-info {
+  padding: 30px;
+  max-width: 450px;
+}
+.branding-info p {
+  margin-bottom: 100px;
+  /* font-size: 1.2rem;
+  font-weight: 300; */
+}
+
+.brand-title {
+  height: 300px;
+  width: 700px;
+  background-color: white;
+  display: flex;
+  padding-inline: 50px;
+  align-items: center;
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 2;
+}
+.brand-title h2 {
+  line-height: 1.2;
+  font-size: 4.8rem;
+  font-weight: 500;
+}
+.brand-dot {
+  height: 650px;
+  width: 380px;
+  background: radial-gradient(circle, #696969 2.5px, transparent 1px);
+  background-size: 10px 10px;
+  position: absolute;
+  right: 0;
+  top: 43%;
+}
+
+.promo-section {
+  display: flex;
+  gap: 30px;
+}
+
+.promo-section h2 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+.promo-section p {
+  margin-bottom: 80px;
+  max-width: 75%;
+}
+
+.promo-text {
+  padding-top: 15px;
+}
+
+.promo-img {
+  padding: 80px;
+  position: relative;
+}
+
+.promo-img img {
+  display: block;
+  object-fit: cover;
+  position: relative;
+  z-index: 3;
+}
+
+#promo {
+  margin-block: 120px;
+}
+
+.blue-box-1,
+.blue-box-2 {
+  background-color: #d0e4f4;
+  position: absolute;
+}
+
+.blue-box-1 {
+  height: 400px;
+  width: 400px;
+  top: 0;
+  left: 0;
+}
+
+.blue-box-2 {
+  height: 300px;
+  width: 340px;
+  bottom: 0;
+  right: 0;
+}
+
+#contacts {
+  background: linear-gradient(
+    to bottom,
+    white 0% 30%,
+    #d0e4f4 30% 75%,
+    white 75% 100%
+  );
+}
+.contact-section {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding-inline: 100px;
+}
+.contact-section img {
+  display: block;
+  object-fit: cover;
+  position: relative;
+  left: 45%;
+  width: 55%;
+}
+
+.contact-form {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  top: 70px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  width: 45%;
+  box-shadow: 2px 5px 20px rgb(100, 100, 100);
+  height: 500px;
+  padding: 30px;
+}
+
+.contact-form h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 0;
+  background: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+  font-size: 0.98rem;
+  padding: 12px;
+  outline: none;
+}
+.contact-form textarea {
+  height: 30%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(190, 190, 190);
+}
+.contact-form button {
+  background-color: #111;
+  color: white;
+  padding: 10px 30px 10px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  color: black;
+  background-color: #aad2f7;
+}
+
+footer {
+  background: linear-gradient(to right, #d0e4f4 0 100%);
+  padding: 50px;
+  text-align: center;
+  margin-top: 150px;
+}
+footer p {
+  font-size: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}

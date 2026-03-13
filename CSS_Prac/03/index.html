@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: black;
+      }
+      span {
+        background-color: lightgreen;
+        display: block;
+        width: fit-content;
+        border-radius: 20px;
+        font-size: 7rem;
+        font-weight: 700;
+        padding: 10px 14px;
+      }
+      .span1 {
+        border-bottom-right-radius: 0;
+      }
+      h1 {
+        width: 1240px;
+        margin: 0 auto;
+      }
+      .span2 {
+        margin: auto;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 0;
+        position: relative;
+      }
+      .span3 {
+        border-top-left-radius: 0;
+        margin-left: auto;
+      }
+      .span2::before {
+        content: "";
+        height: 35px;
+        width: 44px;
+        position: absolute;
+        left: -54px;
+        background: lightgreen;
+        clip-path: path("M 0,0 L 44,0 L 44,35 A 20,20 0,0,0  0,0 L0,0 Z");
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <span class="span1">Business intelligent</span>
+      <span class="span2">build around</span>
+      <span class="span3">data items</span>
+    </h1>
+  </body>
+</html>
