@@ -1,16 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const addTaskBtn = document.getElementById("add-btn");
   const todoForm = document.getElementById("todo-form");
   const input = document.getElementById("todo-input");
-  const body = document.body;
+  const taskChart = document.getElementById("task-chart");
 
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   tasks.forEach((task) => {
     renderTasks(task);
   });
-  // const tasksChart = document.createElement("ul");
-  // tasksChart.className = "task-chart";
-  // body.appendChild(tasksChart);
 
   todoForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -27,25 +23,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tasks.push(task);
     saveTolocalStorage();
-
+    renderTasks(task);
     input.value = "";
   });
+
   function renderTasks(task) {
-    console.log(task);
+    const li = document.createElement("li");
+    li.setAttribute("data-id", task.id);
+    li.innerHTML = `
+      <p>${task.value}</p>
+      <button class="delete">Delete</button>
+    `;
+
+    li.addEventListener("click", function (e) {
+      if (e.target.className === "delete") return;
+      li.isComplete = !li.isComplete;
+      li.classList.toggle("completed");
+      saveTolocalStorage();
+    });
+
+    li.querySelector("button").addEventListener("click", function (e) {
+      e.stopPropagation();
+      tasks = tasks.filter((t) => t.id !== task.id);
+      li.remove();
+      saveTolocalStorage();
+    });
+
+    taskChart.appendChild(li);
   }
+
   function saveTolocalStorage() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 });
-
-// const deleteBtn = document.createElement("button");
-// deleteBtn.innerText = "delete";
-// deleteBtn.id = "delete-btn";
-
-// const newTask = document.createElement("li");
-// newTask.innerText = task.value;
-// newTask.className = "list-item";
-
-// newTask.appendChild(deleteBtn);
-
-// tasksChart.appendChild(newTask);
