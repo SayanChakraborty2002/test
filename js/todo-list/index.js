@@ -34,25 +34,43 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>${task.value}</p>
       <button class="delete">Delete</button>
     `;
-
-    li.addEventListener("click", function (e) {
-      if (e.target.className === "delete") return;
-      li.isComplete = !li.isComplete;
-      li.classList.toggle("completed");
-      saveTolocalStorage();
-    });
-
-    li.querySelector("button").addEventListener("click", function (e) {
-      e.stopPropagation();
-      tasks = tasks.filter((t) => t.id !== task.id);
-      li.remove();
-      saveTolocalStorage();
-    });
-
     taskChart.appendChild(li);
   }
 
   function saveTolocalStorage() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
+
+  taskChart.addEventListener("click", (e) => {
+    const li = e.target.closest("li");
+    if (!li) return;
+
+    const id = Number(li.dataset.id);
+
+    if (e.target.classList.contains("delete")) {
+      tasks = tasks.filter((t) => t.id !== id);
+      li.remove();
+      saveTolocalStorage();
+      return;
+    }
+    let task = tasks.find((t) => t.id === id);
+    if (!task) return;
+    task.isComplete = !task.isComplete;
+    li.classList.toggle("completed");
+    saveTolocalStorage();
+  });
 });
+
+//  li.addEventListener("click", function (e) {
+//     if (e.target.className === "delete") return;
+//     li.isComplete = !li.isComplete;
+//     li.classList.toggle("completed");
+//     saveTolocalStorage();
+//   });
+
+//   li.querySelector("button").addEventListener("click", function (e) {
+//     e.stopPropagation();
+//     tasks = tasks.filter((t) => t.id !== task.id);
+//     li.remove();
+//     saveTolocalStorage();
+//   });
