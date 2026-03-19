@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="weather-container">
+      <input type="text" placeholder="enter-city" />
+      <button type="submit">search weather</button>
+      <div id="weatherContainer" class="weather-report hidden">
+        <h2 id="city"></h2>
+        <p id="temp"></p>
+        <p id="weather-desc"></p>
+      </div>
+      <div id="errorContent" class="error hidden">
+        <h2>Error : Can't get weather info for this location</h2>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
